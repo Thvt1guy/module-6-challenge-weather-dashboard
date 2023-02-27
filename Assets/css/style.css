@@ -1,13 +1,24 @@
-.content {
+ .content {
+    padding-bottom: 3rem;
     max-width: 500px;
     margin: auto;
+    display: flex;
+    justify-content: center;
 }
+.formSearch{
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+/*
 input button{
     display: block;
 }
-.degree{
 
-}
 .weather{
-    /* display: flex; */
+    display: flex;
+    justify-content: space-evenly;
+} */
+
+.search{
+    text-align: center;
 }

@@ -12,15 +12,22 @@
 
 <body>
 
-    <div class="content">
+    <div class="content bg-sky-200">
         <form id="stateSearchForm" action="">
             <h1 class="formSearch text-center text-7xl">Weather Dashboard</h1>
             <div class="search">
-                <input id="stateSearchInput" class="bg-stone-300" type="text" placeholder="City Name...">
-                <button id="search-btn" class="bg-emerald-500" type="submit">Submit</button>
+                <input id="stateSearchInput" class="bg-stone-300 p-2 rounded-l-lg" type="text" placeholder="City Name...">
+                <button id="search-btn" class="bg-emerald-500 p-2 rounded-r-lg" type="submit">Submit</button>
             </div>
         </form>
 
+    </div>
+
+    <div class="bg-slate-300">
+        <h1 class="text-center text-3xl">Saved Searches</h1>
+        <div class="savedSearches" id="savedSearches">
+
+        </div>
     </div>
 
     <div class="weather flex flex-wrap justify-evenly">

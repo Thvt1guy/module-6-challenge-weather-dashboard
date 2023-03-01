@@ -9,6 +9,7 @@ const apiKey = "9d119a7a718ce265750a1d3e48d8c0c2";
 const weatherDataEl = document.querySelector('.weather');
 const savedEl = document.querySelector('.savedSearches');
 const savedContainer = document.querySelector('#savedSearches');
+// var newBtn = document.createElement('button');
 
 
 
@@ -20,6 +21,8 @@ const sumbitHandler = function (event) {
     let state = stateInput.value.trim();
     getCords(state);
 }
+
+
 
 const getCords = function (stateSearched) {
     const geoApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${stateSearched}&limit=1&appid=${geoKey}`
@@ -91,6 +94,11 @@ const writeCurrentData = function (data) {
 
 const writeWeatherData = function (data) {
 
+    const btnHandler = (event) => {
+        event.preventDefault();
+        let btnValue = newBtn.innerText;
+        getCords(btnValue);
+    }
     // console.log(data);
 
     // console.log(data.list[0].main.temp);
@@ -105,15 +113,17 @@ const writeWeatherData = function (data) {
     const Storage = localStorage;
     // savedEl.innerHTML = `<button class="bg-white p-2 rounded-lg">${JSON.stringify(Storage)}</button>`
     localStorage.setItem(stateInput.value, stateInput.value);
-    console.log(Storage);
+    // console.log(Storage);
+    savedContainer.innerHTML ="";
 
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i)
-        console.log(`${key}`)
+        // console.log(`${key}`)
 
-        const newBtn = document.createElement('button');
+        let newBtn = document.createElement('button');
         newBtn.innerHTML = `<button class="bg-white p-2 rounded-lg">${key}</button>`;
         savedContainer.append(newBtn);
+        newBtn.addEventListener("click", btnHandler);
     }
 
 

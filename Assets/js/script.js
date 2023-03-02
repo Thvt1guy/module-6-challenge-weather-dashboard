@@ -25,6 +25,8 @@ const sumbitHandler = function (event) {
 
 
 const getCords = function (stateSearched) {
+    console.log(stateSearched);
+    const myData = JSON.parse(localStorage.getItem(stateSearched));
     const geoApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${stateSearched}&limit=1&appid=${geoKey}`
     fetch(geoApiUrl)
         .then(function (response) {
@@ -96,8 +98,10 @@ const writeWeatherData = function (data) {
 
     const btnHandler = (event) => {
         event.preventDefault();
-        let btnValue = newBtn.innerText;
+        console.log(event);
+        let btnValue = event.target.innerText;
         getCords(btnValue);
+      
     }
     // console.log(data);
 
@@ -112,7 +116,7 @@ const writeWeatherData = function (data) {
 
     const Storage = localStorage;
     // savedEl.innerHTML = `<button class="bg-white p-2 rounded-lg">${JSON.stringify(Storage)}</button>`
-    localStorage.setItem(stateInput.value, stateInput.value);
+    localStorage.setItem(stateInput.value, JSON.stringify(data));
     // console.log(Storage);
     savedContainer.innerHTML ="";
 

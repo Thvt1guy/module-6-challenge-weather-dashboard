@@ -24,7 +24,7 @@ const sumbitHandler = function (event) {
 
 
 const getCords = function (stateSearched) {
-    const geoApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${stateSearched}&limit=1&appid=${geoKey}`
+    const geoApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${stateSearched}&limit=1&appid=${geoKey}`
     fetch(geoApiUrl)
         .then(function (response) {
             if (response.ok) {
@@ -59,7 +59,7 @@ function getLatnLon(data) {
 }
 
 const getUserWeather = function () {
-    const apiUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
     fetch(apiUrl)
         .then(function (response) {
             if (response.ok) {

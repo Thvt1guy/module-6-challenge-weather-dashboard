@@ -5,11 +5,11 @@
 ![Webpage Image]()
 
 ## Coded from scratch
-- Enter desired City in the search bar
-- Click sumbit to begin search
-- Saved searches tab will be updated with recent searched city
-- A list of days containing, the city name
-
+- Enter desired city in the search bar
+- Click submit to begin the search
+- The saved searches tab will be updated with recently searched city
+- A list of days containing the city name, the date, weather icon, temperature, humidity, and wind speed, all in Imperial units
+  
 ## WEBSITE PAGE GIF
 ![Weather-Dashboard-webpage-gif]()
 ## HTML FILE IMAGE
